@@ -151,6 +151,15 @@ html[data-lang="ja"] body{line-break:strict;overflow-wrap:anywhere}
 .upd-top{font:12.5px/1.6 var(--mono);color:var(--ink2);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:8px 12px;margin:0 0 12px}
 .upd-top b{color:var(--blue-ink);font-weight:650}
 .upd-foot{font-size:13.5px;color:var(--ink2);border-top:1px dashed var(--line2);margin-top:36px;padding-top:14px;max-width:100ch;line-height:1.75}
+/* ---------- maintenance log tag & copy box ---------- */
+.t-log{border-color:var(--ink3);color:var(--ink2);background:transparent}
+.cmd-box{background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:10px 12px;margin:0 0 12px}
+.cmd-label{font:12px var(--mono);color:var(--ink3)}
+.cmd-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.cmd-text{font:14px var(--mono);background:var(--sunk);color:var(--ink);padding:6px 10px;border-radius:6px;flex:1;min-width:0}
+.cmd-copy{font:13px var(--sans);padding:6px 12px;border:1px solid var(--blue);background:var(--blue);color:#fff;border-radius:6px;cursor:pointer;white-space:nowrap}
+.cmd-copy:hover{filter:brightness(1.08)}
+@media print{.cmd-box{display:none!important}}
 </style>
 <div class="shell">
 <aside id="side" aria-label="手冊目錄">
@@ -221,7 +230,8 @@ html[data-lang="ja"] body{line-break:strict;overflow-wrap:anywhere}
 </div>
 </aside>
 <main id="main">
- <div class="upd-top" data-l="zh">最後更新：<b>2026-10-09</b> ・ 下次更新：<b>2027-01-09</b>（每 3 個月）・ 統計快照：<b>2026-10-07</b></div>
+ <div class="cmd-box"><div class="cmd-label">更新指令（新對話直接貼上）／ 更新コマンド（新しいチャットに貼り付け）</div><div class="cmd-row"><code class="cmd-text">依 UPDATE.md 更新 Google 商家檔案操作手冊</code><button type="button" class="cmd-copy" data-cmd="依 UPDATE.md 更新 Google 商家檔案操作手冊">複製指令 ／ コピー</button></div></div>
+<div class="upd-top" data-l="zh">最後更新：<b>2026-10-09</b> ・ 下次更新：<b>2027-01-09</b>（每 3 個月）・ 統計快照：<b>2026-10-07</b></div>
 <div class="upd-top" data-l="ja">最終更新：<b>2026-10-09</b> ・ 次回更新：<b>2027-01-09</b>（3か月ごと）・ 統計スナップショット：<b>2026-10-07</b></div>
 <div class="topbar"><button id="menu" aria-controls="side" aria-expanded="false" data-t="menu">☰ 目錄</button><span></span><div class="lang" role="group" aria-label="言語 / 語言"><button type="button" data-setlang="zh" aria-pressed="true">中文</button><button type="button" data-setlang="ja" aria-pressed="false">日本語</button></div><button id="theme" aria-label="theme" data-t="theme">◐ 深淺色</button></div>
  <div class="hero" data-l="zh">
@@ -3536,9 +3546,9 @@ html[data-lang="ja"] body{line-break:strict;overflow-wrap:anywhere}
 </section>
 <section class="chapter" id="upd" data-l="zh"><header><span class="pnum">22</span><h2>資訊更新紀錄</h2></header><p class="lede">每次更新的日期、來源與變動都記在這裡，最新的紀錄排在最前面。</p>
 
-<article class="topic" id="t-upd-2026-10-09" data-imp="3" data-conf="1" data-src="mixed">
+<article class="topic" id="t-upd-2026-10-09" data-imp="3" data-conf="1" data-src="log">
 <h3>2026-10-09：建立更新機制</h3>
-<div class="rate"><span><span class="lab">重要</span><span class="stars s-imp" role="img" aria-label="重要程度 3 顆星（滿分 5）">★★★☆☆</span></span><span><span class="lab">易錯</span><span class="stars s-conf" role="img" aria-label="易搞混程度 1 顆星（滿分 5）">★☆☆☆☆</span></span><span class="tag t-mixed">說法不一</span></div>
+<div class="rate"><span><span class="lab">重要</span><span class="stars s-imp" role="img" aria-label="重要程度 3 顆星（滿分 5）">★★★☆☆</span></span><span><span class="lab">易錯</span><span class="stars s-conf" role="img" aria-label="易搞混程度 1 顆星（滿分 5）">★☆☆☆☆</span></span><span class="tag t-log">維護紀錄</span></div>
 <p>這次新增了三樣東西：頁面最上方的「最後更新、下次更新」日期列、文末的更新說明，以及維護用的 <code>UPDATE.md</code>。日期以實際完成更新的那天為準，之後每 3 個月更新一次。</p>
 <p>這次<b>沒有</b>抓取新的帖子或文章，第 1–21 章的內容維持不變。第 17 章的用戶提問統計仍以 2026-10-07 的快照為準。</p>
 <p class="src">原文出處：本條是維護紀錄，不引用外部來源。</p>
@@ -6854,9 +6864,9 @@ html[data-lang="ja"] body{line-break:strict;overflow-wrap:anywhere}
 </section>
 <section class="chapter" id="ja-upd" data-l="ja"><header><span class="pnum">22</span><h2>情報更新の記録</h2></header><p class="lede">更新のたびに、日付・情報源・変更内容をここに記録します。新しい記録ほど上に表示します。</p>
 
-<article class="topic" id="ja-t-upd-2026-10-09" data-imp="3" data-conf="1" data-src="mixed" data-base="t-upd-2026-10-09">
+<article class="topic" id="ja-t-upd-2026-10-09" data-imp="3" data-conf="1" data-src="log" data-base="t-upd-2026-10-09">
 <h3>2026-10-09：更新の仕組みを作成</h3>
-<div class="rate"><span><span class="lab">重要度</span><span class="stars s-imp" role="img" aria-label="重要度 5 つ星中 3">★★★☆☆</span></span><span><span class="lab">間違えやすさ</span><span class="stars s-conf" role="img" aria-label="間違えやすさ 5 つ星中 1">★☆☆☆☆</span></span><span class="tag t-mixed">見解が分かれる</span></div>
+<div class="rate"><span><span class="lab">重要度</span><span class="stars s-imp" role="img" aria-label="重要度 5 つ星中 3">★★★☆☆</span></span><span><span class="lab">間違えやすさ</span><span class="stars s-conf" role="img" aria-label="間違えやすさ 5 つ星中 1">★☆☆☆☆</span></span><span class="tag t-log">保守の記録</span></div>
 <p>今回、3 つの機能を追加しました。ページ最上部の「最終更新・次回更新」の日付欄、ページ末尾の更新案内、そして保守用の <code>UPDATE.md</code> です。日付は実際に更新を完了した日とし、その後は 3 か月ごとに更新します。</p>
 <p>今回は新しい投稿や記事の取得は<b>行っていません</b>。第 1〜21 章の内容は変更していません。第 17 章のコミュニティ質問の統計は、引き続き 2026-10-07 のスナップショットに基づきます。</p>
 <p class="src">出典：本項目は保守の記録であり、外部の情報源は引用していません。</p>
@@ -6884,6 +6894,16 @@ html[data-lang="ja"] body{line-break:strict;overflow-wrap:anywhere}
 <div class="upd-foot" data-l="ja"><b>情報更新のお知らせ：</b>本マニュアルは 2026-10-09 に最終更新し、次回は 2027-01-09 を予定しています（3か月ごと）。第17章のコミュニティ質問の統計は 2026-10-07 時点のスナップショットに基づきます。Google のポリシーや画面は頻繁に変わるため、操作前には必ず Google ビジネス プロフィール ヘルプで最新情報を確認してください。古い内容や誤りは次回の更新で修正します。</div>
 </main>
 </div>
+<script>
+document.querySelectorAll('.cmd-copy').forEach(function(b){
+ b.addEventListener('click',function(){
+  var t=b.getAttribute('data-cmd'),o=b.textContent;
+  function done(){b.textContent='✓ 已複製 ／ コピー済み';setTimeout(function(){b.textContent=o},1600)}
+  function fallback(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){b.textContent='請手動複製 ／ 手動でコピー'}ta.remove()}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+ });
+});
+</script>
 <button id="top" aria-label="回到頂端">↑ 頂端</button>
 <script>
 (function(){
